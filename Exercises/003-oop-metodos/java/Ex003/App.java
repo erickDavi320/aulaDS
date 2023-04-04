@@ -22,8 +22,13 @@ public class App {
 		switch(c) {
 		
 			case '/': {	
-				System.out.println(mat.valorUm+" / "+mat.valorDois+" = "+mat.fazerDivisao(mat.valorUm, mat.valorDois));
-				break;
+				try {
+					System.out.println(mat.valorUm+" / "+mat.valorDois+" = "+mat.fazerDivisao(mat.valorUm, mat.valorDois));
+				} catch(IllegalArgumentException e) {
+					System.out.println(e);
+				} finally {
+					break;
+				}
 			}
 			case '*': {	
 				mat.fazerMultiplicacao(mat.valorUm, mat.valorDois);
